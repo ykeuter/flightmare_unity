@@ -564,7 +564,8 @@ namespace RPGFlightmare
         {
           // Apply translation, rotation, and scaling
           // GameObject prefab = Resources.Load(obj_state.prefabID) as GameObject;
-          GameObject other_obj = internal_state.getGameobject(obj_state.ID, gate_template);
+          // GameObject other_obj = internal_state.getGameobject(obj_state.ID, gate_template);
+          GameObject other_obj = internal_state.getGameobject(obj_state.ID, obj_state.prefabID);
           other_obj.transform.SetPositionAndRotation(ListToVector3(obj_state.position), ListToQuaternion(obj_state.rotation));
           other_obj.transform.localScale = ListToVector3(obj_state.size);
         }
@@ -707,7 +708,8 @@ namespace RPGFlightmare
       {
         // GameObject prefab = Resources.Load(obj_state.prefabID) as GameObject;
         Debug.Log("obj_state id : " + obj_state.ID);
-        GameObject obj = internal_state.getGameobject(obj_state.ID, gate_template);
+        // GameObject obj = internal_state.getGameobject(obj_state.ID, gate_template);
+        GameObject obj = internal_state.getGameobject(obj_state.ID, obj_state.prefabID);
         obj.transform.localScale = ListToVector3(obj_state.size);
         // obj.layer = 9;
       }
